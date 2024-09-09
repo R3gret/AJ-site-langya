@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About AJ</title>
+    <link rel="stylesheet" href="aboutme.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>AJ</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Hobbies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am currently a third-year student at Batangas State University - TNEU Arasof Campus, pursuing a Bachelor of Science in Information Technology with a major in Business Analytics. My educational journey began at Eulogio G. Cerrado Elementary School (2010-2016), continued through Core Science Academy Inc. for Junior High (2016-2020), and STI College Balayan for Senior High (2020-2022).</p>
+        <p>Coming from a family dedicated to service—my father being a barangay captain in Sabang, Tuy, Batangas, and my mother a nurse working in Saudi Arabia—I have grown up with strong values of community and hard work. As an only child, I have developed strong interpersonal skills, enabling me to easily connect with others and build meaningful relationships.</p>
+        <p>My passion lies in system analysis, where I enjoy diving deep into complex problems and finding efficient solutions. I am also an avid reader who loves exploring different ideas and perspectives through books. Additionally, I have a knack for cooking, which adds a creative and practical side to my skill set. I am driven to further develop my analytical skills and contribute to the world of technology and business analytics.</p>
+
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="pic1aj.jpg" alt="Image 1">
+                <img src="pic2aj.jpg" alt="Image 2">
+                <img src="download.jpeg" alt="Image 3">
+            </div>
+            <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+            <a class="next" onclick="moveSlide(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <div class="hobi">
+
+    <section id="skills">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>
+                <a href="#" class="skill-item" data-description="Reading is a great way to expand your knowledge and escape into different worlds.">Reading</a>
+                <div class="description"></div>
+            </li>
+            <li>
+                <a href="#" class="skill-item" data-description="Cooking is a creative activity that combines art and science to produce delicious meals.">Cooking</a>
+                <div class="description"></div>
+            </li>
+            <li>
+                <a href="#" class="skill-item" data-description="System analysis involves studying and understanding complex systems to improve their functionality.">System Analysis</a>
+                <div class="description"></div>
+            </li>
+            <li>
+                <a href="#" class="skill-item" data-description="Playing online games can be a fun way to relax and challenge yourself.">Playing Online</a>
+                <div class="description"></div>
+            </li>
+            <li>
+                <a href="#" class="skill-item" data-description="Basketball is a team sport that improves physical fitness and coordination.">Playing Basketball</a>
+                <div class="description"></div>
+            </li>
+            <li>
+                <a href="#" class="skill-item" data-description="Getting enough sleep is crucial for overall health and well-being.">Sleeping</a>
+                <div class="description"></div>
+            </li>
+        </ul>
+    </section></div>
+
+    <div class ="cont">
+
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>You can reach me through the following platforms:</p>
+        <div class="contact-links">
+            <a href="https://www.facebook.com/allenjohnydesacola" target="_blank">
+                <i class="fab fa-facebook-square"></i> Facebook: Allen John Y. Desacola
+            </a>
+            <a href="https://x.com/sammiasfav" target="_blank">
+                <i class="fab fa-twitter-square"></i> Twitter: sammiasfav
+            </a>
+            <a href="https://www.instagram.com/desacolaii/" target="_blank">
+                <i class="fab fa-instagram-square"></i> Instagram: desacolaii
+            </a>
+            <a href="tel:+09912344167">
+                <i class="fas fa-phone-square"></i> Contact Number: 09912344167
+            </a>
+        </div>
+    </section></div>
+
+
+    <footer>
+        <p>&copy; 2024 AJ. All rights reserved.</p>
+    </footer>
+
+    <script src="aboutme.js"></script>
+
+    <script>
+        let slideIndex = 0;
+
+        function showSlides() {
+            const slides = document.querySelectorAll('.carousel-images img');
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { 
+                slideIndex = 1; 
+            } 
+            slides[slideIndex - 1].style.display = "block";  
+        }
+
+        function moveSlide(n) {
+            slideIndex += n; 
+            const slides = document.querySelectorAll('.carousel-images img');
+            if (slideIndex > slides.length) { 
+                slideIndex = 1; 
+            } else if (slideIndex < 1) { 
+                slideIndex = slides.length; 
+            } 
+            showSlides(); 
+        }
+
+        showSlides();
+
+        setInterval(() => moveSlide(1), 3000);
+
+        document.querySelector('.prev').addEventListener('click', () => moveSlide(-1));
+        document.querySelector('.next').addEventListener('click', () => moveSlide(1));
+    </script>
+
+</body> 
+</html>
